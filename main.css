@@ -1,0 +1,299 @@
+:root{
+    --primary-blue:hsl(220, 98%, 61%);
+    --primary-gradient:linear-gradient(to right,hsl(280, 87%, 65%),hsl(192, 100%, 67%));
+    --lightgray-very-light:hsl(0, 0%, 98%);
+    --lightblue-grayish-very-light:hsl(236, 33%, 92%);
+    --lightblue-grayish-light:hsl(233, 11%, 84%);
+    --lightblue-grayish-dark:hsl(236, 9%, 61%);
+    --lightblue-grayish-dark-very:hsl(235, 19%, 35%);
+    --darkblue-dark-very:hsl(235, 21%, 11%);
+    --darkblue-dest-dark-very:hsl(235, 24%, 19%);
+    --darkblue-grayish-light:hsl(234, 39%, 85%);
+    --darkblue-grayish-lighthover:hsl(236, 33%, 92%);
+
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+
+}
+.main__img{
+    height: 35vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+}
+.body--dark .main__img
+{
+        background-image: url(./images/bg-desktop-dark.jpg);
+
+}
+.container{
+    padding-top: 10vh;
+    width: 600px;
+}
+.container header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+header .header__title{
+    color: white;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 400;
+}
+header .theme__btn{
+    background-color: transparent;
+    border: none;
+}
+.theme__btn img{
+    height: 30px;
+}
+
+
+.body--dark{
+    background-color: var(--darkblue-dark-very);
+}
+
+.checkbox__container{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50px;
+    height: 100%;
+}
+
+.checkbox__container .mark{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: 1px solid var(--lightblue-grayish-dark-very);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+.add__checkbox:hover  ~.mark{
+    opacity: 0.7;
+
+}
+.mark img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+
+}
+
+.checkbox__container .add__checkbox{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 5;
+    opacity: 0;
+
+}
+.checkbox__container .add__checkbox:checked ~ .mark{
+    background-image: var(--primary-gradient);
+
+}
+.body--dark .add__input{
+    color: var(--darkblue-grayish-light);
+    font-size: 18px;
+    font-weight: 400;
+}
+.body--dark .add__input:focus{
+    outline: none;
+}
+.add{
+    position: relative;
+}
+.add .add__input{
+    height: 50px;
+    padding-left: 50px;
+    width: 100%;
+    background-color: var(--darkblue-dest-dark-very);
+    border: none;
+    border-radius: 4px;
+}
+/* todo items */
+.todo{
+    background-color: var(--darkblue-dest-dark-very);
+    margin-top: 45px;
+    border-radius: 6px;
+}
+.todo__item{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+
+}
+ .todo__item.completed{
+    opacity: 0.4;
+}
+.body--dark .todo__item{
+    border-bottom: 1px solid var(--lightblue-grayish-dark-very);
+}
+ .todo__item.completed .todo__text{
+    text-decoration: line-through;
+}
+.todo__item .checkbox__container input{
+    width: 100%;
+    height: 100%;
+}
+.todo__text{
+    padding-left: 50px;
+    font-weight: 400;
+    
+}
+.body--dark .todo__text{
+    color: var(--darkblue-grayish-light);
+}
+.todo__text{
+    cursor: pointer;
+}
+.todo__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0px 30px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.body--dark .todo__footer , .body--dark .todo__footer button{
+    color: var(--lightblue-grayish-dark-very);
+    font-size: 14px;
+    transition: 0.3s;
+} 
+.body--dark .todo__footer p:hover , .body--dark .todo__footer button:hover{
+    color: var(--darkblue-grayish-light);
+}
+.todo__footer button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.todo__footer .todo__control{
+    display: flex;
+    gap: 12px;
+    
+}
+.delete__btn{
+    background-color: transparent;
+    border: none;
+    justify-self: flex-end;
+    margin-left: auto;
+    padding-right: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.todo__item:hover > .delete__btn{
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+
+}
+.add__input:focus{
+    outline: none;
+}
+/* light theme*/
+.body--light .todo{
+    background-color: var(--lightgray-very-light);
+    box-shadow: 1px 4px 13px 0px #0000001f;
+
+}
+.body--light{
+        background-color: var(--lightgray-very-light);
+}
+.body--light .todo__item{
+      border-bottom: 1px solid var(--lightblue-grayish-light);
+}
+.body--light .todo__footer button ,.body--light .todo__footer p{
+    color: var(--lightblue-grayish-dark);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.body--light .todo__footer button:hover, .todo__footer p:hover{
+    color: var(--lightblue-grayish-dark-very);
+}
+.body--light .todo__item p{
+    color:var(--lightblue-grayish-dark-very) ;
+}
+.todo__footer{
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.body--light .add__input{
+        background-color: var(--lightgray-very-light);
+}
+.checkbox__container .mark{
+    border: 1px solid var(--lightblue-grayish-light);
+}
+.body--light .main__img{
+    background-image: url(./images/bg-desktop-light.jpg);
+}
+
+@media (max-width:620px) {
+    .body--light .main__img{
+        background-image: url(./images/bg-mobile-light.jpg);
+    }
+        .body--dark .main__img{
+        background-image: url(./images/bg-mobile-dark.jpg);
+    }
+    .container{
+        width: 95%;
+        position: relative;
+    }
+    .todo__control{
+    position: absolute;
+    top: 105%;
+    width: 100%;
+    left: 0px;
+    justify-content: space-evenly;
+    height: 53px;
+    border-radius: 6px;
+    }
+   .body--dark .todo__control{
+            background-color: var(--darkblue-dest-dark-very);
+
+    }
+    .body--light .todo__control{
+        background-color: var(--lightgray-very-light);
+            box-shadow: 1px 4px 13px 0px #0000001f;
+
+    }
+}
+.theme__btn{
+    transition: 0.3s;
+    cursor: pointer;
+}
+.theme__btn:hover{
+  opacity: 0.6;
+}

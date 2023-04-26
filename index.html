@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./main.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="body--light">
+  <div class="main__img"></div>
+  <div class='container'>
+      <header>
+        <h1 class="header__title">Todo</h1>
+        <button class="theme__btn"><img src="./images/icon-sun.svg" alt="theme icon"></button>
+      </header>
+  <div class="add">
+   <div class="checkbox__container input__checkbox">
+    <input type="checkbox" class="add__checkbox">
+    <span class="mark">
+          <img src="./images/icon-check.svg" alt="checkbox icon">
+
+    </span>
+   </div>
+     <input type="text" placeholder="Create a New todo" class="add__input">
+  </div>    
+  <div class="todo">
+    <div class="todo__items">
+
+    </div>
+
+  <div class="todo__footer">
+    <p class="items__number">0 item left</p>
+    <div class="todo__control">
+      <button class="all">All</button>
+      <button class="active">Active</button>
+      <button class="complet">Completed</button>
+    </div>
+    <button class="clear__btn">Clear</button>
+
+  </div>
+  </div>
+
+  </div>
+
+
+ <!-- Drag and drop to reorder list -->
+<script src="./main.js"></script>
+</body>
+</html>
